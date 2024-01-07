@@ -1,0 +1,89 @@
+@use "sass:math";
+
+@function calc_rem($vw) {
+  $proporzione: math.div(4vw , 1rem);
+  @return math.div($vw , $proporzione);
+}
+@mixin mix_font_size($vw){
+    font-size: calc(calc_rem($vw) + $vw);
+}
+body{
+    $border-radius: 10px;
+    margin: 0;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    #box_countdown_till{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        #countdown_till{
+            @include mix_font_size(4vw);
+            font-weight: 700;
+        }
+        #year{
+            @include mix_font_size(8vw);
+            font-weight: 900;
+        }
+    }
+    #box_timer{
+        width: 100vw;
+        flex: 1;
+        display: flex;
+        flex-wrap: wrap;
+        .container_time{
+
+            flex: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media (orientation:portrait) {
+                flex: 50%; 
+            }
+
+            .time{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 18vw;
+                height: 18vw;
+                padding-left: 10px;
+                padding-right: 10px;
+                border-radius: $border-radius;
+                background-color: rgb(40, 40, 40);
+
+                @media (orientation:portrait) {
+                    width: 50%;
+                    height: 70%;
+                }
+
+                .num{
+                    @include mix_font_size(4vw);
+                    font-weight: 700; 
+                }
+
+                .text{
+                    @include mix_font_size(1.8vw);
+                    font-weight: 600;
+                    text-align: center;
+                    border-radius: $border-radius;
+                    background-color: white;
+                    color: black;
+                    width: 100%;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                }
+                
+            }
+        }
+        
+    }
+}

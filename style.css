@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body #box_countdown_till {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body #box_countdown_till #countdown_till {
+  font-size: calc(1rem + 4vw);
+  font-weight: 700;
+}
+body #box_countdown_till #year {
+  font-size: calc(2rem + 8vw);
+  font-weight: 900;
+}
+body #box_timer {
+  width: 100vw;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+}
+body #box_timer .container_time {
+  flex: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (orientation: portrait) {
+  body #box_timer .container_time {
+    flex: 50%;
+  }
+}
+body #box_timer .container_time .time {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 18vw;
+  height: 18vw;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  background-color: rgb(40, 40, 40);
+}
+@media (orientation: portrait) {
+  body #box_timer .container_time .time {
+    width: 50%;
+    height: 70%;
+  }
+}
+body #box_timer .container_time .time .num {
+  font-size: calc(1rem + 4vw);
+  font-weight: 700;
+}
+body #box_timer .container_time .time .text {
+  font-size: calc(0.45rem + 1.8vw);
+  font-weight: 600;
+  text-align: center;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */
