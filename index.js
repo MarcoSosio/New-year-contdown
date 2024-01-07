@@ -7,7 +7,6 @@ function calcola_tempo(){
 
     //1 gennaio dell'anno prossimo //!GENNAIO=0 E NON 1
     const next_year = new Date(current_year + 1, 0, 1);
-    //const next_year = new Date(current_year, 11, 30, 19 , 12)
     span_year.innerHTML = next_year.getFullYear();
     
     const secondi_restanti_totali = Math.floor((next_year - now) / 1000);
